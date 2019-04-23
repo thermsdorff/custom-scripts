@@ -1,8 +1,7 @@
 #!/bin/bash
 
-## Resize display to fit Full HD external screen
-xrandr --fb 3840x2160 --output eDP1 --off --output HDMI1 --mode 1920x1080 --scale 2x2 --pos 0x0 --panning 3840x2160+0+0
+## Resize display to fit 4K main screen resolution
+xrandr --fb 3840x2160 --output eDP1 --scale 1x1 --auto --mode 3840x2160 --pos 0x0 --output HDMI1 --scale 1x1 --auto --mode 3840x2160 --pos 0x0
 ## Force update of gnome scaling
 gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gdk/WindowScalingFactor': <2>}"
 gsettings set org.gnome.desktop.interface scaling-factor 2
-
